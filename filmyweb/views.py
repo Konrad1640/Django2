@@ -5,11 +5,15 @@ from .forms import FilmForm
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .serializers import UserSerializer
+from .serializers import UserSerializer, FilmSerializer
 
 class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class FilmView(viewsets.ModelViewSet):
+    queryset = Film.objects.all()
+    serializer_class = FilmSerializer
 
 
 @login_required
