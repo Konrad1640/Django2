@@ -20,10 +20,22 @@
     {% else %}
         <h2>Ilość filmów w BD: {{ filmy|length }}</h2>
         {% for film in filmy %}
-        <h3>{{ film }}</h3>
-        <p>{{ film.opis }}</p>
-        <a href="{% url 'edytuj_film' film.id %}">Edytuj</a>
-        <a href="{% url 'usun_film' film.id %}">Usun</a>
+
+        <div class="card" style="width: 22rem;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">
+                        <h5 class="card-title">{{ film }}</h5>
+                      </div>
+                      <div class="col-3">
+                      <a href="{% url 'edytuj_film' film.id %}">Edytuj</a>
+                    <a href="{% url 'usun_film' film.id %}">Usun</a>
+                 </div>
+             </div>
+             <div class="row">
+              <p class="card-text">{{ film.opis }}</p>
+            </div>
+        </div>
         {% endfor %}
     {% endif %}
 
