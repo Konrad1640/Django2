@@ -3,6 +3,14 @@ from django.http import HttpResponse
 from .models import Film
 from .forms import FilmForm
 from django.contrib.auth.decorators import login_required
+from rest_framework import viewsets
+from django.contrib.auth.models import User
+from .serializers import UserSerializer
+
+class UserView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
 
 @login_required
 def wszystkie_filmy(request):
