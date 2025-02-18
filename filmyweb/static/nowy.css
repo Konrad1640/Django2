@@ -6,3 +6,11 @@ body {
     width: 150px;
     float: lef;
 }
+
+.opis {
+    margin-left: 15px;
+}
+
+.card {
+    width: 36rem;
+}
